@@ -9,8 +9,9 @@ class Application
         resp.write "#{item}\n"
       end
       
-    elsif
-      
+    else
+      resp.write "Route not found"
+      resp.status = 404
       
       if req.path.match(/items/)
         @@item.each do |item|
