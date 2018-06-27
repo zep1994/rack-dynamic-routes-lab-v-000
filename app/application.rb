@@ -6,7 +6,7 @@ class Application
     
     if req.path.match(/items/)
       @@items.each do |item|
-        resp.write "#{@price}\n\n"
+        resp.write "#{@price}"
       end
     elsif req.path.match(/search/)
  
