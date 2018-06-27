@@ -6,7 +6,7 @@ class Application
     
      if req.path.match(/items/)
        song_title = req.path.split("/items/").last
-       if item = @@items
+       if item = @@items.find { |i| i.
       end
       
     
