@@ -5,13 +5,15 @@ class Application
     req = Rack::Request.new(env)
     
      if req.path.match(/items/)
-      @@item.each do |item|
+      @@items.each do |item|
         resp.write "#{@price}\n"
       end
     else
       resp.write "Route not found"
       resp.status = 404
     end
+    
+    
  
     resp.finish
   end
