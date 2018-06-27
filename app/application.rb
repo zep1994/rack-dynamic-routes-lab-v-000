@@ -4,7 +4,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-    if req.path.match(/item/@@item)
+    if req.path.match(/item/:name)
       @@item.each do |item|
         resp.write "#{@price}"
       end
