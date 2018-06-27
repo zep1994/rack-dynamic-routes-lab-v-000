@@ -5,6 +5,7 @@ class Application
     req = Rack::Request.new(env)
     
      if req.path.match(/items/)
+       song_title = req.path.split("/items/").last
       @@items.each do |item|
         resp.write "#{item}\n"
       end
