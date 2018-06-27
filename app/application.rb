@@ -6,7 +6,7 @@ class Application
     
     if req.path.match(/items/)
       @@items.each do |item|
-        resp.write "#{item}\n"
+        resp.write "#{@price}\n"
       end
     elsif req.path.match(/search/)
  
@@ -15,11 +15,13 @@ class Application
       if @@items.include?(search_term)
         resp.write "#{search_term} is one of our items"
       else
-        resp.write "Couldn't find #{search_term}"
+        resp.write "Item not found"
+        resp.status = 400
       end
  
     else
       resp.write "Path Not Found"
+      resp.status = 404
     end
  
     resp.finish
