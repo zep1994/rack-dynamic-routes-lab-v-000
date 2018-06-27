@@ -9,15 +9,6 @@ class Application
        if item_name = @@items.find { |i| i.name == item_name}
          resp.write item.price
       end
-      
-    
-      if req.path.match(/items/)
-        @@item.each do |item|
-          resp.write "#{@price}"
-    else
-      resp.write "Route not found"
-      resp.status = 404
-    end
     
     else
       resp.write "Route not found"
