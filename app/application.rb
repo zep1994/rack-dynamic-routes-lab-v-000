@@ -4,8 +4,8 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-    if req.path.match(/items/)
-      @@items.each do |item|
+    if req.path.match(/item/)
+      @@item.each do |item|
         resp.write "#{@price}"
       end
     elsif req.path.match(/search/)
