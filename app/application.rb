@@ -6,8 +6,8 @@ class Application
     
      if req.path.match(/items/)
        song_title = req.path.split("/items/").last
-       if item_price = @@items.find { |i| i.name == item_name}
-         resp.write item_price.price
+       if item = @@items.find { |i| i.name == item_name}
+         resp.write item.price
        else
          resp.write "Item not found"
          resp.status = 400
