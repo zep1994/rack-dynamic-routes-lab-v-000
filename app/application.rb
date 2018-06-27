@@ -8,8 +8,8 @@ class Application
     req = Rack::Request.new(env)
     
      if req.path.match(/items/)
-       song_title = req.path.split("/items/").last
-      if item = @@items.find{|i| i.name == name}
+       item_name = req.path.split("/items/").last
+      if item = @@items.find{|i| i.name == item_name}
         resp.write item.price
        else
          resp.write "Item not found"
